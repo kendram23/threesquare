@@ -1,10 +1,11 @@
 <h1><%= @location.name%></h1>
 
-
+<img alt="student" src="<%= @location.picture_url %>" class="img-rounded" />
 <p><%= @location.address %></p>
 <p><%= @location.website %></p>
 <p><%= @location.review %></p>
 
-<p><%= link_to 'Back to Locations', locations_path %></p>
-<p><%= link_to 'Home', root_path %></p>
-<p><%= link_to 'Edit', edit_location_path %></p>
+<%= link_to 'Back to Locations', locations_path %>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Edit', edit_location_path %>
+<%= link_to 'Delete', location_path(@location.id), method: :delete, data: { confirm: 'Are you sure?' } %>

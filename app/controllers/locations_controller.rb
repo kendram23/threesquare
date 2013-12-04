@@ -28,7 +28,9 @@ class LocationsController < ApplicationController
 	end
 
 	def destroy
+		@location = Location.find(params[:id])
 		@location.destroy
+		redirect_to root_path
 	end
 
 	private

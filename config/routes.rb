@@ -1,6 +1,6 @@
 Threesquare::Application.routes.draw do
   
-  root 'static_pages#home'
+  root 'locations#index'
   resources :locations
 
 end
