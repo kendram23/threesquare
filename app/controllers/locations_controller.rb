@@ -1,28 +1,28 @@
 class LocationsController < ApplicationController
 
 	def show
-		@location = Locations.find(params[:id])
+		@location = Location.find(params[:id])
 	end
 
 	def index
-		@locations = Locations.all
+		@locations = Location.all
 	end
 
 	def new
-		@location = Locations.new
+		@location = Location.new
 	end
 
 	def create
-		location = Locations.create(loca_params)
+		@location = Location.create(loca_params)
 		redirect_to root_path
 	end
 
 	def edit
-		@location = Locations.find(params[:id])
+		@location = Location.find(params[:id])
 	end
 
 	def update
-		@location = Locations.find(params[:id])
+		@location = Location.find(params[:id])
 		@location.update(loca_params)
 		redirect_to root_path
 	end
@@ -33,7 +33,7 @@ class LocationsController < ApplicationController
 
 	private
 	def loca_params
-		params.require(:locations).permit(:picture_url, :name, :review, :address, :website)
+		params.require(:location).permit(:picture_url, :name, :review, :address, :website)
 	end
 
 end
