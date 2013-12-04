@@ -1,0 +1,20 @@
+<%= form_for @location do |f| %>
+
+	<%= f.label "Location Name: " %>
+	<%= f.text_field :name, :placeholder => 'Name' %>
+
+	<%= f.label "Address: " %>
+	<%= f.text_field :address, :placeholder => 'Address' %>
+
+	<%= f.label "Add an Image! " %>
+	<%= f.text_field :picture_url, :placeholder => '' %>
+
+	<%= f.label "Website: " %>
+	<%= f.text_field :website, :placeholder => 'Website URL' %>
+
+	<%= f.label "Add a Review: " %>
+	<%= f.text_field :review, :placeholder => 'Review' %>
+
+	<%= f.submit 'Submit New Location' %>
+
+<%= end %>
