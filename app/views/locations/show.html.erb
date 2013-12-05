@@ -2,8 +2,29 @@
 
 <img alt="student" src="<%= @location.picture_url %>" class="img-rounded" />
 <p><%= @location.address %></p>
-<p><%= @location.website %></p>
-<p><%= @location.review %></p>
+<h2>Add a rating!</h2>
+<p>Ratings: 
+
+
+	<% @location.ratings.each do |rating| %>
+		<p>Rating:
+	<%= rating.rating.to_s %>
+	<% end %></p>
+
+
+<%= form_for ([@location, @location.ratings.build]) do |f| %>
+  <p>
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+
+
 
 <%= link_to 'Back to Locations', locations_path %>
 <%= link_to 'Home', root_path %>
